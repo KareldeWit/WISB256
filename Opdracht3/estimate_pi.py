@@ -18,9 +18,9 @@ if len(sys.argv) <= 2:
     sys.exit()
 
 end = int(sys.argv[1])
-l = int(sys.argv[2])
+l = float(sys.argv[2])
 
-if (l<0 or l>1):
+if (l<0):
     print("AssertionError: L should be smaller than 1")
     sys.exit()
 
@@ -35,7 +35,11 @@ h = 0
 while i<end:
     h += randline()
     i += 1
-approx = (2*l*end)/float(h)
+
+if (l<=1):
+    approx = (2*l*end)/float(h)
+else:
+    approx = 2*(l-math.sqrt(l**2 -1)-math.asin(1/l))/(-1+(float(h)/end))
 
 print(str(h) + " hits in " + str(end) + " tries")
 print("Pi = " + str(approx))
