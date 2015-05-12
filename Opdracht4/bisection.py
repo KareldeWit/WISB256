@@ -19,7 +19,7 @@ def findRoot(f,a,b,epsilon):
 
 def findAllRoots(f,a,b,epsilon):
     i = 0
-    dx = (abs(a)+abs(b))/19
+    dx = abs(b-a)/19
     nulpunten = []
     
     while (i<19):
