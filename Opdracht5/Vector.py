@@ -31,8 +31,8 @@ class Vector:
 
     def norm(self):
         return math.sqrt(self.inner(self))
-        
 
+#Bonus, implementatie van grammschmidt        
 def GrammSchmidt(vectoren):
     resultaat = []
     
