@@ -8,12 +8,10 @@ class Vector:
     def __init__(self, size, value=0):
         self.size = int(size)
         if isinstance(value,list):
-            #print('A')
             self.vector = value
         else:
             self.vector = [value]*size
-            #print('B')
-    
+
     def __str__(self):
         output = ""
         for i in range(0,self.size-1):
@@ -33,3 +31,17 @@ class Vector:
 
     def norm(self):
         return math.sqrt(self.inner(self))
+        
+
+def GrammSchmidt(vectoren):
+    resultaat = []
+    
+    for i in range(0, len(vectoren)):
+        nieuw = vectoren[i]
+        
+        for j in resultaat:
+            nieuw = j.lincomb(nieuw,-(vectoren[i].inner(j) / j.inner(j)),1)
+        
+        resultaat.append(nieuw.scalar(1/nieuw.norm()))
+        
+    return resultaat
