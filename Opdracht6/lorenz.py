@@ -2,13 +2,13 @@ from scipy.integrate import odeint
 from numpy import *
 
 class Lorenz:
-    sig = 10.
-    rho = 28.
-    bet = 8./3.
-    
+
     #contructor
-    def __init__(self, init):
+    def __init__(self, init, sig=10, rho=28, bet=8/3):
         self.init = init
+        self.sig = sig
+        self.rho = rho
+        self.bet = bet
    
     #afgeleide functie
     def f(self, z, time):

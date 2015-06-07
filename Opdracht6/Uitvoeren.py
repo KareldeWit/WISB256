@@ -1,4 +1,4 @@
-from Lorenz import *
+from lorenz import *
 
 L1 = Lorenz([-1,1,0])
 u1 = L1.solve(50,0.01)
